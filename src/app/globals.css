@@ -1,26 +1,327 @@
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Normalize and external styles */
+@import "modern-normalize/modern-normalize.css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* 🔽 Tailwind Design Tokens from Experiences (merged here directly) */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 84 100% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 280 100% 60%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 84 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 84 100% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 84 100% 50%;
+
+    /* Ampartists Custom Variables */
+    --White: #fff;
+    --Yellow: #c1ff16;
+    --Grey-BG: #1c1c1c;
+    --Grey-BG-2: #303030;
+    --Grey-BG-3: #2a2e36;
+    --Dark-Grey: #262626;
+    --Grey-Icon: #99a1af;
+    --Light-Grey: #6e7684;
+    --Orange: #f94819;
+    --Blue: #2f4acb;
+    --Purple: #8181d5;
+    --Black: #181718;
+    --Red: #ff0033;
+    --Light-devider: #d6fe46;
+    --Dark-devider: #bbe601;
+
+    --transition: all 0.3s ease-in-out;
+
+    --padding-container-desktop: 15.62em;
+    --padding-container-mobile: 0.833em;
+    --padding-inner-section: 5.21em;
+    --padding-inner-80: 4.166em;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 84 100% 50%;
+    --primary-foreground: 220 20% 8%;
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 280 100% 60%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 84 100% 50%;
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 84 100% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 84 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
+/* 🔽 Ampartists original base styles (keep as-is) */
+:root {
+  font-family: "Segoe UI", system-ui, Gotham, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+
+  --White: #fff;
+  --Yellow: #c1ff16;
+  --Grey-BG: #1c1c1c;
+  --Grey-BG-2: #303030;
+  --Grey-BG-3: #2a2e36;
+  --Dark-Grey: #262626;
+  --Grey-Icon: #99a1af;
+  --Light-Grey: #6e7684;
+  --Orange: #f94819;
+  --Blue: #2f4acb;
+  --Purple: #8181d5;
+  --Black: #181718;
+  --Red: #ff0033;
+  --Light-devider: #d6fe46;
+  --Dark-devider: #bbe601;
+
+  --transition: all 0.3s ease-in-out;
+
+  --padding-container-desktop: 15.62em;
+  --padding-container-mobile: 0.833em;
+  --padding-inner-section: 5.21em;
+  --padding-inner-80: 4.166em;
+
+  color-scheme: light dark;
+  color: var(--White);
+  background: var(--Grey-BG);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Gotham";
+  font-weight: 500;
+  src: local("Gotham"), url(../assets/fonts/Gotham/Gotham-Medium-500.woff) format("opentype");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 700;
+  src: local("Gotham"), url(../assets/fonts/Gotham/Gotham-Bold-700.woff) format("opentype");
+}
+@font-face {
+  font-family: "Gotham-Book";
+  font-weight: 500;
+  src: local("Gotham-Book"), url(../assets/fonts/Gotham-Book/Gotham-Book-Font-500.otf) format("opentype");
+}
+@font-face {
+  font-family: "Cairo";
+  font-weight: 700;
+  src: local("Cairo"), url(../assets/fonts/Cairo/Cairo-Bold.ttf) format("opentype");
+}
+
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.carioFont {
+  font-family: Cairo;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+html {
+  font-size: 1vw;
+  scroll-behavior: smooth;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+}
+button {
+  background-color: transparent;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--Yellow);
+  border-radius: 10px;
+  transition: all 2s ease-in-out;
+}
+
+/* Component overrides */
+.react-responsive-modal-modal {
+  max-width: fit-content;
+}
+
+.swiper-pagination-bullet {
+  width: 20px !important;
+  height: 20px !important;
+  background-color: transparent !important;
+  background-image: url(../assets/images/paginationDefault.png) !important;
+}
+.swiper-pagination-bullet-active {
+  background-image: url(../assets/images/paginationActive.png) !important;
+}
+.swiper-pagination-bullets {
+  position: sticky !important;
+  margin-top: 64px !important;
+}
+
+/* Calendar */
+.ReactModal__Overlay--after-open {
+  z-index: 2;
+  overflow-y: scroll;
+}
+
+.react-calendar {
+  background: var(--Dark-Grey);
+  color: var(--White);
+  border: none;
+  border-radius: 16px;
+  font-family: Gotham-Book;
+  width: 100%;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.react-calendar__navigation button {
+  background: none;
+  color: var(--White);
+  font-weight: 600;
+  font-size: 1em;
+}
+.react-calendar__month-view__days__day {
+  font-size: 1.2em;
+  padding: 0.75em 0.5em;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.react-calendar__month-view__days__day:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.react-calendar__tile--active {
+  background: var(--Yellow);
+  color: var(--Dark-Grey);
+  border-radius: 8px;
+}
+.react-calendar__tile--now {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+.react-calendar__tile--now:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.react-calendar__tile:disabled {
+  color: #666;
+  background: none;
+}
+
+@media (orientation: portrait) {
+  .swiper-pagination-bullets {
+    margin-top: 40px !important;
+  }
+  .ReactModal__Overlay--after-open {
+    overflow-y: unset;
+  }
+  .ReactModal__Content--after-open {
+    transform: unset !important;
+    inset: unset !important;
+    width: 100% !important;
+  }
+  .react-calendar {
+    font-size: 4rem;
+  }
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: inherit;
+}
+.react-calendar__navigation button:disabled {
+  background: none !important;
+}
+.event-page {
+  font-size: 16px;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  height: 0;
 }

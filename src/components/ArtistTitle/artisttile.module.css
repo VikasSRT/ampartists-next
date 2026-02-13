@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  padding: var(--padding-inner-80) var(--padding-container-desktop);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+}
+.title {
+  text-align: center;
+  font-weight: 700;
+
+  font-size: 5em;
+  line-height: 114.6%;
+  text-transform: uppercase;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.subTitle {
+  color: var(--White);
+
+  line-height: 133%;
+  font-size: 1.875em;
+  text-align: center;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+@media (orientation: portrait) {
+  .container {
+    padding: 40px 16px;
+    gap: 16px;
+  }
+  .title {
+    font-size: 36px;
+    line-height: 38px;
+  }
+  .subTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

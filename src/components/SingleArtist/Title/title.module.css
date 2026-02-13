@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+  font-size: 4.167em;
+  line-height: 112.5%;
+  text-transform: uppercase;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+@media (orientation: portrait) {
+  .title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}

@@ -1,0 +1,182 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--padding-inner-section) 0;
+  background-color: var(--Yellow);
+  overflow: hidden;
+}
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1320px;
+  width: 100%;
+  z-index: 1;
+}
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.04em;
+}
+.title {
+  color: var(--Grey-BG);
+  text-align: center;
+
+  font-size: 4.17em;
+  line-height: 112.5%;
+  text-transform: uppercase;
+}
+.title {
+  max-width: 46.875em;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.titleBlue {
+  color: var(--Blue);
+}
+.subTitle {
+  color: var(--Grey-BG);
+  text-align: center;
+
+  font-size: 1.25em;
+  line-height: 133%;
+  max-width: 44.16rem;
+  margin-bottom: 3.33rem;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.description {
+  text-align: center;
+  font-weight: 500;
+
+  font-size: 1.875em;
+  line-height: 133%;
+  color: var(--Grey-BG);
+
+  margin: 1.04rem 0;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.triangleFirst,
+.triangleSecond {
+  position: absolute;
+  width: 13.49rem;
+  height: 8.75rem;
+  color: var(--Orange);
+}
+.triangleFirst {
+  top: 50%;
+  left: 0;
+}
+.triangleSecond {
+  top: 19%;
+  left: 14%;
+}
+.decorStar {
+  position: absolute;
+  top: 20%;
+
+  right: -11%;
+  width: 24rem;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 24rem;
+  background-image: url(../../assets/images/Star.png);
+  animation: spin 10s linear infinite;
+}
+.modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+@media (orientation: portrait) {
+  .container {
+    padding: 40px 16px 0;
+  }
+  .wrapper {
+    margin-bottom: 128px;
+  }
+  .title,
+  .titleBlue {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .subTitle {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    max-width: unset;
+  }
+  .triangleFirst {
+    position: static;
+    width: 28rem;
+    height: 18rem;
+    margin-bottom: 20px;
+  }
+  .triangleSecond {
+    display: none;
+  }
+  .decorStar {
+    bottom: -15%;
+    top: unset;
+    left: 23%;
+    width: 56rem;
+    height: 56rem;
+  }
+  .description {
+    font-size: 24px;
+    line-height: 32px;
+    margin: 20px 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+/* Triangle animations */
+.triangle {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  animation: none;
+}
+
+.animate .triangle1 {
+  animation: appear 0.3s ease-out forwards;
+  animation-delay: 0s;
+}
+.animate .triangle2 {
+  animation: appear 0.3s ease-out forwards;
+  animation-delay: 0.2s;
+}
+.animate .triangle3 {
+  animation: appear 0.3s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

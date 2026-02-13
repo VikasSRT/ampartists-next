@@ -1,0 +1,146 @@
+.container {
+  position: relative;
+  padding: var(--padding-inner-section) var(--padding-container-desktop);
+}
+.titleListen {
+
+  font-size: 4.167em;
+  line-height: 112.5%;
+  text-transform: uppercase;
+
+  margin-bottom: 3.33rem;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.spotiFyTitle {
+
+  font-size: 1.875em;
+  line-height: 133%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  p {
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+}
+.spotiFyList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22.91rem, 1fr));
+  gap: 20px;
+  margin: 20px 0 40px;
+  width: 100%;
+}
+.spotifyItem {
+  padding: 6px;
+  background: var(--Grey-BG-3);
+}
+.youtubeList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22.91rem, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+.youtubeItem {
+  position: relative;
+}
+.youtubePreview {
+  width: 100%;
+}
+.playYoutubeBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 48px;
+  color: var(--Red);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.decorLeft,
+.decorRight {
+  position: absolute;
+  z-index: -1;
+}
+.decorLeft {
+  top: 57%;
+  left: -9%;
+  animation: levitate 20s linear infinite;
+}
+.decorRight {
+  top: 27%;
+  right: -3%;
+  color: var(--Orange);
+  animation: spin 20s linear infinite;
+}
+.decorIcon,
+.decorIconCircle {
+  width: 15.7rem;
+  height: 15.7rem;
+}
+.decorIconCircle {
+  color: var(--Purple);
+}
+@media (orientation: portrait) {
+  .container {
+    padding: 60px 16px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .titleListen {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 40px;
+  }
+  .spotiFyTitle {
+    align-items: center;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .spotiFyList {
+    gap: 8px;
+    margin: 20px 0 32px;
+    grid-template-columns: auto;
+  }
+  .youtubeList {
+    grid-template-columns: auto;
+    gap: 8px;
+  }
+
+  .spotifyItem {
+    padding: 6px;
+    background: var(--Grey-BG-3);
+  }
+  .decorRight,
+  .decorLeft {
+    display: none;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes levitate {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(12%, 22%);
+  }
+  70% {
+    transform: translate(15%, 10%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

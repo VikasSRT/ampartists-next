@@ -1,0 +1,129 @@
+.wrapper {
+  width: 100%;
+}
+
+.inputs {
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.wrapper input[type="number"]::-webkit-inner-spin-button,
+.wrapper input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wrapper input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.sliderWrapper {
+  position: relative;
+  height: 30px;
+}
+
+.wrapper input[type="range"] {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  background: transparent;
+  height: 30px;
+  margin: 0;
+}
+
+.wrapper input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1;
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--Yellow);
+  background: var(--Grey-BG);
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.sliderTrack {
+  position: absolute;
+  top: 14px;
+  height: 2px;
+  background-color: var(--Light-Grey);
+  width: 100%;
+}
+
+.sliderRange {
+  position: absolute;
+  height: 100%;
+  background-color: var(--Yellow);
+}
+.wrapperInput {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.inputContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--Grey-Icon);
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.input {
+  width: 100%;
+  min-width: 148px;
+  max-width: 285px;
+  color: var(--White);
+  font-size: 18px;
+  line-height: 24px;
+  outline: none;
+  transition: var(--transition);
+  border-radius: 999px;
+  border: 0.5px solid var(--White);
+  background: var(--Dark-Grey);
+  padding: 12px 20px 12px 40px;
+}
+
+.label {
+  color: var(--Yellow);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 12px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.line {
+  background-color: var(--Light-Grey);
+  width: 8px;
+  height: 1px;
+}
+@media (orientation: portrait) {
+  .wrapper {
+    width: 100%;
+  }
+  .input {
+    max-width: unset;
+    padding: 13px 12px 13px 40px;
+  }
+}

@@ -1,0 +1,56 @@
+.triangleFirst {
+  display: block;
+  width: 10.49rem;
+  height: 7rem;
+  color: var(--Orange);
+  top: 50%;
+  left: 100px;
+  overflow: visible;
+}
+
+.triangle {
+  transform-origin: center;
+  opacity: 0;
+}
+
+.animate .triangle1 {
+  animation: appear 4s ease-out infinite, slideOut 4s ease-in infinite;
+  animation-delay: 0s;
+}
+.animate .triangle2 {
+  animation: appear 4s ease-out infinite, slideOut 4s ease-in infinite;
+  animation-delay: 0.5s;
+}
+.animate .triangle3 {
+  animation: appear 4s ease-out infinite, slideOut 4s ease-in infinite;
+  animation-delay: 1s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

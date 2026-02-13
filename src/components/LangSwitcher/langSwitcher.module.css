@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+.button {
+  font-family: "Segoe UI";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 8px 8px 10px;
+  color: var(--White);
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus {
+    color: var(--Yellow);
+  }
+}
+.active {
+  color: var(--Yellow);
+}
+.devider {
+  width: 1px;
+  height: 20px;
+  opacity: 0.5;
+  background: var(--White);
+}
+@media (orientation: portrait) {
+  .button {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+}

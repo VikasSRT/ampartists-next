@@ -1,0 +1,200 @@
+.button {
+  padding: 8px 20px 10px;
+
+  background-color: var(--Yellow);
+  color: var(--Grey-BG);
+  transition: var(--transition);
+  border-radius: 999px;
+  color: #000;
+
+  font-size: 0.833em;
+  font-weight: 600;
+  line-height: 125%;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover,
+  &:focus {
+    background-color: var(--White);
+  }
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+
+.buttonIcon,
+.black {
+  padding: 1em 2.08em 1.09em 2.5em;
+  background: var(--White);
+  display: flex;
+  align-items: center;
+  gap: 0.42em;
+  transition: var(--transition);
+  border-radius: 999px;
+  font-weight: 700;
+
+  font-size: 1.04em;
+  line-height: 120%;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #000;
+  justify-content: center;
+  z-index: 1;
+
+  span {
+    margin-top: 2px;
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--Yellow);
+  }
+}
+.white {
+  background-color: var(--White);
+
+  &:hover,
+  &:focus {
+    background-color: var(--Yellow);
+  }
+}
+
+.icon {
+  transition: var(--transition);
+  color: var(--Orange);
+}
+
+.buttonIcon:hover .icon,
+.buttonIcon:focus .icon {
+  transform: translateX(4px);
+}
+
+.brief {
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  font-size: 1.04em;
+  line-height: 120%;
+  padding: 1em 2.5em 1.09em 2.5em;
+}
+
+.artists {
+  font-weight: 700;
+
+  font-size: 1.04em;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.black {
+  background: var(--Grey-BG);
+  color: var(--White);
+
+  &:hover,
+  &:focus {
+    background-color: var(--White);
+    color: var(--Grey-BG);
+  }
+}
+
+.bookNow {
+  margin: 0 auto;
+}
+
+.artistPage,
+.artistPageBlack {
+  font-weight: 500;
+  text-transform: uppercase;
+
+  font-size: 1.04em;
+  line-height: 120%;
+  padding: 1em 2.5em 1.09em;
+}
+.artistPageBlack {
+  background-color: var(--Grey-BG);
+  color: var(--Yellow);
+
+  &:hover,
+  &:focus {
+    background-color: var(--White);
+    color: var(--Grey-BG);
+  }
+}
+.fullWidthAll {
+  width: 100%;
+}
+.tours {
+  width: 100%;
+  font-weight: 500;
+
+  font-size: 1.04em;
+  line-height: 120%;
+  padding: 1em 2.5em 1.09em;
+}
+.onlyMobile {
+  display: none;
+}
+@media (orientation: portrait) {
+  .fullWidth {
+    width: 100%;
+  }
+  .artists {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 14px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .artistsShow {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 14px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+  .buttonIcon {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .menu {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 20px 0 22px;
+  }
+  .artistPage,
+  .bookNow {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    width: 100%;
+  }
+  .brief {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 13px 48px 13px 48px;
+  }
+  .artistPageBlack {
+    width: 100%;
+    font-size: 16px;
+  }
+  .tours {
+    font-size: 4.8em;
+    padding: 1em 2.5em 1.09em;
+  }
+  .white,
+  .green {
+    font-size: 20px;
+  }
+  .onlyMobile {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}

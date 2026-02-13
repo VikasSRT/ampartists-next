@@ -1,0 +1,42 @@
+.eq-bar {
+  transform-origin: center bottom;
+  animation-name: eq-pulse;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  will-change: transform;
+}
+
+@keyframes eq-pulse {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.3);
+  }
+}
+
+.eq-style-0 {
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+
+.eq-style-1 {
+  animation-duration: 1.4s;
+  animation-delay: 0.1s;
+}
+
+.eq-style-2 {
+  animation-duration: 0.8s;
+  animation-delay: 0.2s;
+}
+
+.eq-style-3 {
+  animation-duration: 1.6s;
+  animation-delay: 0.05s;
+}
+
+.eq-style-4 {
+  animation-duration: 1.2s;
+  animation-delay: 0.15s;
+}

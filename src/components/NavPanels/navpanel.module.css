@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.item button {
+  color: var(--White);
+  font-size: 16px;
+
+  line-height: 125%;
+  letter-spacing: 0.7px;
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--Yellow);
+  }
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+@media (max-width: 768px) {
+  .item button {
+    font-size: 12px;
+  }
+  .list {
+    gap: 16px;
+  }
+}
+@media (orientation: portrait) {
+  .list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .item button {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 133%;
+  }
+}

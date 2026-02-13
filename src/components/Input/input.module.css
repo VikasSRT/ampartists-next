@@ -1,0 +1,133 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  color: var(--Yellow);
+  font-weight: 700;
+
+  font-size: 1.33em;
+  line-height: 133%;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--Grey-Icon);
+}
+
+.input {
+  width: 100%;
+  max-width: 285px;
+
+  color: var(--White);
+
+  outline: none;
+  transition: var(--transition);
+  border-radius: 999px;
+  border: 0.5px solid var(--White);
+  background: var(--Dark-Grey);
+  font-size: 0.9375em;
+  line-height: 133%;
+  padding: 1.04em 1.04em 1.04em 2.3em;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+
+  &::placeholder {
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 14.84rem;
+  cursor: pointer;
+  background-image: url("../../assets/icons/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 24px;
+  transition: var(--transition);
+}
+
+.tooltipWrapper {
+  margin-left: 4px;
+  position: relative;
+  cursor: help;
+}
+.tooltipWrapper svg{
+  color: var(--Orange);
+}
+.tooltipText {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  max-width: 285px;
+  color: var(--White);
+  outline: none;
+  transition: var(--transition);
+  border: 0.5px solid var(--Light-Grey);
+  background: var(--Dark-Grey);
+  font-size: 0.7em;
+  line-height: 133%;
+  padding: 0.5em;
+
+  z-index: 2;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.tooltipWrapper:hover .tooltipText,
+.tooltipWrapper:focus .tooltipText {
+  opacity: 1;
+  visibility: visible;
+}
+.infoIcon {
+  width: 16px;
+  stroke: orange;
+  height: 16px;
+  margin-top: 4px;
+}
+.right {
+}
+@media (orientation: portrait) {
+  .wrapper {
+    width: 100%;
+  }
+  .input {
+    max-width: unset;
+    padding: 13px 12px 13px 40px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .label {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .infoIcon {
+    margin-top: 2px;
+  }
+}

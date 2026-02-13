@@ -1,0 +1,63 @@
+.initialDiv {
+  display: inline-flex;
+  flex-wrap: wrap;
+  position: relative;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+.coverAbsolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.title,
+.whiteText {
+  font-weight: 700;
+
+  font-size: 5em;
+  line-height: 114%;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 1;
+
+  color: var(--Yellow);
+}
+.subTitle {
+  text-align: center;
+  font-weight: 500;
+
+  font-size: 1.875em;
+  line-height: 133%;
+  margin: 1.04em 0;
+  z-index: 1;
+}
+.whiteText {
+  color: var(--White);
+}
+.overflowHidden {
+  overflow: hidden;
+}
+.wrapper {
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+@media (orientation: portrait) {
+  .title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+  .subTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

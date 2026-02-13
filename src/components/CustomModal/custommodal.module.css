@@ -1,0 +1,47 @@
+.modalContainer {
+  max-width: 90vw;
+
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+.customOverlay {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.customCloseButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.overvlow {
+  overflow: hidden;
+}
+.closeIcon {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.left {
+  right: unset;
+  left: 24px;
+}
+@media (orientation: portrait) {
+  .closeIcon {
+    right: 12px;
+    top: 12px;
+  }
+
+  .left {
+    right: unset;
+    left: 12px;
+  }
+}

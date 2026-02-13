@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  padding: 12px var(--padding-container-desktop);
+  display: flex;
+  align-items: center;
+  background: var(--Grey-BG);
+  z-index: 2;
+}
+
+.navPanel {
+  margin: 0 auto;
+}
+
+@media (orientation: portrait) {
+  .container {
+    padding: var(--padding-container-mobile);
+    justify-content: space-between;
+  }
+  .navPanel {
+    display: none;
+  }
+}

@@ -1,0 +1,542 @@
+.container {
+  position: relative;
+  background: var(--Black);
+  display: flex;
+  max-width: 602px;
+  width: 602px;
+  padding: 24px;
+  flex-direction: column;
+}
+.profileContainer {
+  max-width: 684px;
+}
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.title {
+  color: var(--White);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 32px;
+  margin-bottom: 8px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.subTitle {
+  color: var(--Light-Grey);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 24px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.closeIcon {
+  position: absolute;
+  right: 18px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.form,
+.formColumn {
+  position: relative;
+  display: flex;
+  padding: 24px 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 0.8px solid rgba(110, 118, 132, 0.2);
+  background: var(--Grey-BG);
+}
+.formColumn {
+  flex-direction: column;
+  align-items: normal;
+}
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+  width: 100%;
+}
+.crewSet {
+  color: var(--White);
+
+  font-size: 18px;
+  line-height: 24px;
+  margin: 16px 0;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.inputGroup {
+  display: flex;
+  gap: 16px;
+}
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.containerWidth {
+  width: 248px !important;
+}
+.containerWidth289 {
+  width: 289px !important;
+}
+.containerWidthFull {
+  width: 100% !important;
+}
+.labelBooking {
+  color: var(--White) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+}
+.selectBooking,
+.selectBookingTextArea,
+.inputArtist,
+.inputArtistTextArea,
+.selectProfile,
+.selectLocation {
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  width: 100% !important;
+}
+.selectBookingTextArea,
+.inputArtistTextArea {
+  padding: 20px !important;
+  max-width: unset !important;
+  resize: none !important;
+}
+.containerWidthTextArea {
+  width: 100% !important;
+}
+.form textarea::placeholder ,
+.form input::placeholder {
+  color: rgba(255,255,255,0.3);
+  font-family: 'Gotham-Book';
+}
+/* PopupArtistRegistration */
+.stepsList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8.5px;
+  margin-top: 12px;
+}
+.stepsItem,
+.stepsItemProfile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stepsItem:not(:last-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background-color: var(--Light-Grey);
+  top: 24px;
+  right: -54px;
+}
+.stepsItem:nth-child(2)::after {
+  right: -76px;
+}
+.stepsItemProfile:not(:last-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background-color: var(--Light-Grey);
+  top: 24px;
+}
+.stepsItemProfile:nth-child(1)::after {
+  right: -32px;
+}
+
+.stepsItemProfile:nth-child(2)::after {
+  right: -16px;
+}
+.stepsItemProfile:nth-child(3)::after {
+  right: -22px;
+}
+
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 1px solid var(--Light-Grey);
+}
+.active {
+  background-color: var(--Yellow);
+}
+
+.iconSteps {
+  width: 24px;
+  height: 24px;
+}
+.stepTitle {
+  color: var(--White);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 4px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.stepDescription,
+.stepDescriptionReg {
+  color: var(--Light-Grey);
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.stepName {
+  color: var(--White);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0;
+}
+.inputArtist,
+.inputArtistTextArea {
+  padding: 10px 16px !important;
+}
+.inputArtist p {
+  font-family: 'Gotham-Book';
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rightPosition {
+  justify-content: flex-end;
+}
+.button {
+  display: flex;
+  padding: 8px 24px 8px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 0.8px solid var(--Light-Grey);
+  color: var(--Light-Grey);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: var(--Yellow);
+    color: var(--Grey-BG);
+  }
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+
+  span {
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+}
+.button:hover .buttonPrevIcon,
+.button:focus .buttonPrevIcon,
+.button:hover .buttonNextIcon,
+.button:focus .buttonNextIcon {
+  color: var(--Orange);
+}
+.buttonPrevIcon,
+.buttonNextIcon {
+  transition: var(--transition);
+}
+.buttonPrevIcon {
+  rotate: 180deg;
+}
+.rightBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.trippleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.containerWidth33 {
+  width: 165px !important;
+}
+.terms {
+  color: var(--Light-Grey);
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+
+.linkYellow {
+  color: var(--Yellow);
+}
+
+.fileListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.fileListTitle {
+  color: var(--Yellow);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 16px;
+}
+.item {
+  color: var(--White);
+  font-size: 14px;
+  line-height: 20px;
+  list-style: disc;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.item span {
+  color: var(--Yellow);
+}
+.addButton {
+  color: var(--Light-Grey);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 12px 24px;
+  border: 0.8px solid var(--Light-Grey);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus {
+    border-color: var(--Yellow);
+    color: var(--Yellow);
+  }
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+
+.selectProfile {
+  padding: 10px 48px 10px 16px !important;
+}
+.selectLocation {
+  padding: 10px 48px 10px 30px !important;
+}
+
+.subTitle {
+  color: var(--Light-Grey);
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.uploadDescription {
+  text-align: center;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.uploadInfo1,
+.uploadInfo2 {
+  color: var(--Light-Grey);
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.uploadInfo1 {
+  margin: 8px 0 2px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 0;
+}
+.spaceBetween {
+  justify-content: space-between;
+}
+.travelTitle {
+  color: var(--Yellow);
+
+  font-size: 20px;
+  line-height: 24px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.profileListTitle {
+  color: var(--White);
+
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 16px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.devider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--Light-Grey);
+  margin: 20px 0;
+}
+.m0 {
+  margin: 0;
+}
+.option {
+  font-size: 14px;
+}
+
+@media (orientation: portrait) {
+  .container {
+    height: 100% !important;
+    min-height: 100vh;
+  }
+  .form {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .containerWidth {
+    width: 100% !important;
+  }
+
+  .containerWidthTextArea {
+    width: 100% !important;
+  }
+
+  .containerWidth289 {
+    width: 100% !important;
+  }
+  .container {
+    padding: 16px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-bottom: 70px;
+  }
+  .stepsItem:not(:last-child)::after {
+    right: -14px;
+  }
+  .stepsItem:nth-child(2)::after {
+    right: -37px;
+  }
+  .trippleContainer {
+    flex-direction: column;
+  }
+  .containerWidth33 {
+    width: 100% !important;
+  }
+  .rightBtnContainer {
+    gap: 2px;
+  }
+  .inputGroup,
+  .fieldset {
+    flex-direction: column;
+  }
+  .stepsList {
+    align-items: normal;
+  }
+  .stepsItemProfile::after,
+  .stepsItem::after {
+    display: none !important;
+  }
+  .stepDescription {
+    display: none;
+  }
+  .stepContainer {
+    margin: 16px 0;
+    gap: 16px;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.error {
+  width: 100%;
+  color: var(--Orange);
+  word-break: break-word;
+  line-height: 17px;
+  font-size: 12px;
+}
+.subTitleContact {
+  color: var(--Light-Grey);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 16px;
+  font-family: 'Gotham-Book';
+}
+.titleForm {
+  color: var(--White);
+  font-family: Gotham;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+.titleContainer {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.subTitleContactForm {
+  color: var(--White);
+  font-family: Gotham-Book;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  opacity: .8;
+}

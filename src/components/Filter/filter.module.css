@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+}
+.wrapper {
+  background-color: var(--Yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus {
+    background-color: var(--White);
+  }
+}
+.dropDownContainer {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 20px;
+  padding: 20px;
+
+  border-radius: 40px;
+  background: var(--Grey-BG-2);
+  z-index: 2;
+  transition: var(--transition);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+.rtl {
+  right: unset;
+  left: 0;
+}
+.icon {
+  width: 16px;
+  height: 18px;
+}
+.fullWidth {
+  width: 100%;
+  max-width: unset;
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 28px;
+}
+@media (orientation: portrait) {
+  .dropDownContainer {
+    width: auto;
+  }
+}

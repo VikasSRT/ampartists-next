@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  padding: 0 var(--padding-container-desktop);
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.fullWidth {
+  width: 100%;
+}
+.fullWidthInput {
+  width: 100%;
+  max-width: 100%;
+
+  padding: 13px 12px 13px 40px;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (orientation: portrait) {
+  .container {
+    padding: 0 16px;
+  }
+}

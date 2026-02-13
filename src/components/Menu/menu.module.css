@@ -1,0 +1,64 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.burgerLine {
+  width: 31px;
+  height: 2px;
+  background-color: var(--White);
+  margin: 8px 0;
+  border-radius: 1px;
+  transition: var(--transition);
+}
+
+.topOpen {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.middleOpen {
+  scale: 0;
+}
+
+.bottomOpen {
+  transform: translateY(-10px) rotate(-45deg);
+}
+.modalContent {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  padding: 30px;
+}
+@media (orientation: portrait) {
+  .container {
+  }
+  .buttonContainer {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .buttonContainerMobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+  }
+}

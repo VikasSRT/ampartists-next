@@ -1,0 +1,157 @@
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: 64px;
+}
+.tours {
+  display: none;
+}
+.slider {
+  width: auto;
+  max-width: 1330px;
+}
+.sliderItem {
+  width: 428px !important;
+}
+.image {
+  object-fit: cover;
+}
+.btnNext,
+.btnPrev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--Yellow);
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus {
+    background: var(--White);
+  }
+}
+
+.btnNext {
+  rotate: -90deg;
+}
+.btnPrev {
+  rotate: 90deg;
+}
+.arrow {
+  width: 28px;
+  height: 28px;
+}
+.btnNext:hover .arrow,
+.btnNext:hover:focus .arrow,
+.btnPrev:hover .arrow,
+.btnPrev:hover:focus .arrow {
+  color: var(--colors-common-black);
+}
+.navBtn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+.prev {
+  left: -94px;
+}
+.next {
+  right: -94px;
+}
+.wrapper {
+  background: var(--Dark-Grey);
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.text {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 24px;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.author,
+.client {
+  color: var(--Orange);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.client {
+  color: rgba(255, 255, 255, 0.4);
+}
+@media (orientation: portrait) {
+  .container {
+    margin-top: 40px;
+  }
+  .tours {
+    display: block;
+  }
+  .sliderItem {
+    width: 100% !important;
+  }
+  .wrapper {
+    padding: 12px;
+  }
+  .text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .author,
+  .client {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .item {
+    padding: 16px;
+    background: var(--Dark-Grey);
+    box-shadow: 4px 4px 0px 0px var(--Purple);
+  }
+
+  .image {
+    width: 100%;
+  }
+  .info {
+    margin: 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .place {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 133%;
+
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+  .date {
+    color: var(--Orange);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+  .location {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+
+    direction: var(--dir);
+    unicode-bidi: bidi-override;
+  }
+}

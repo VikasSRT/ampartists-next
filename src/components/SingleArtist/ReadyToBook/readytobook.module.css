@@ -1,0 +1,127 @@
+.container {
+  position: relative;
+  padding: var(--padding-inner-section) var(--padding-container-desktop);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Yellow);
+  overflow: hidden;
+}
+.title {
+  color: var(--Grey-BG);
+  text-align: center;
+
+  font-size: 4.167em;
+  line-height: 112.5%;
+  text-transform: uppercase;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.title {
+  margin-bottom: 32px;
+  max-width: 46.875rem;
+}
+.titleBlue {
+  color: var(--Blue);
+}
+.description {
+  position: relative;
+  color: var(--Grey-BG);
+  text-align: center;
+  font-size: 1.875em;
+  line-height: 133%;
+  margin-bottom: 40px;
+
+  z-index: 1;
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.triangleFirst {
+  position: absolute;
+  width: 13.49rem;
+  height: 8.75rem;
+  color: var(--Orange);
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+}
+.decorStar {
+  position: absolute;
+  bottom: -50%;
+  right: 3%;
+  width: 24rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 24rem;
+  background-image: url(../../../assets/images/Star.png);
+  animation: spin 10s linear infinite;
+}
+@media (orientation: portrait) {
+  .container {
+    padding: 60px 16px 120px;
+    align-items: center;
+  }
+  .decorStar {
+    bottom: -25%;
+    left: 23%;
+    width: 56rem;
+    height: 56rem;
+  }
+  .title,
+  .titleBlue {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+  .description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+  }
+  .triangleFirst {
+    position: static;
+    width: 20.49rem;
+    height: 13.75rem;
+  }
+}
+/* Triangle animations */
+.triangle {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  animation: none;
+}
+
+.animate .triangle1 {
+  animation: appear 0.3s ease-out forwards;
+  animation-delay: 0s;
+}
+.animate .triangle2 {
+  animation: appear 0.3s ease-out forwards;
+  animation-delay: 0.2s;
+}
+.animate .triangle3 {
+  animation: appear 0.3s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

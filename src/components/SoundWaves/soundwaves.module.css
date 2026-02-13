@@ -1,0 +1,80 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.soundWaves {
+  opacity: 0.7;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 30px;
+  width: 100%;
+}
+
+.bar {
+  width: 8px;
+  background-color: var(--Purple);
+  border-radius: 1px;
+}
+.green {
+  background-color: var(--Yellow);
+}
+/* Animations */
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.8);
+  }
+}
+
+.animateWave1 {
+  animation: wave 1.2s ease-in-out infinite;
+}
+.animateWave2 {
+  animation: wave 1.5s ease-in-out infinite;
+}
+.animateWave3 {
+  animation: wave 1.8s ease-in-out infinite;
+}
+.animateWave4 {
+  animation: wave 2s ease-in-out infinite;
+}
+.animateWave5 {
+  animation: wave 2.3s ease-in-out infinite;
+}
+
+/* Responsive visibility */
+.mobile {
+  display: flex;
+}
+.tablet,
+.desktop {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet {
+    display: none;
+  }
+  .desktop {
+    display: flex;
+  }
+}

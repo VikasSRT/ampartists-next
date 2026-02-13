@@ -1,0 +1,124 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--padding-inner-section) 0;
+  background-image: url(../../assets/images/bg-hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1320px;
+}
+.title {
+  font-size: 5em;
+  font-weight: 700;
+
+  line-height: 114%;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 1;
+
+  span {
+    color: var(--Yellow);
+  }
+
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+.subTitle {
+  text-align: center;
+
+  font-size: 1.875em;
+  font-weight: 500;
+
+  line-height: 133%;
+
+  margin: 1.04em 0;
+  z-index: 1;
+  direction: var(--dir);
+  unicode-bidi: bidi-override;
+}
+
+.description {
+  text-align: center;
+
+  font-size: 1.25em;
+  line-height: 133%;
+  margin-bottom: 3.33em;
+}
+.decorLeft {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: -11%;
+  height: 21rem;
+  width: 21rem;
+  background-image: url(../../assets/images/Star.png);
+  animation: spin 10s linear infinite;
+}
+.decorRight {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 14.95rem;
+  height: 15.3125rem;
+  background-image: url(../../assets/images/hero_decor_right.png);
+}
+
+@media (orientation: portrait) {
+  .container {
+  }
+  .title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 38px;
+  }
+  .wrapper {
+    padding: 50px 13px;
+  }
+
+  .subTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .description {
+    margin-bottom: 64px;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+
+  .decorLeft {
+    top: 2%;
+    left: -22%;
+    width: 38.67rem;
+    height: 38.67rem;
+  }
+  .decorRight {
+    top: unset;
+    bottom: 0;
+    transform: translateY(0);
+    width: 35.47rem;
+    height: 36.53rem;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
