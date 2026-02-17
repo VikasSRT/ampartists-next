@@ -26,7 +26,7 @@ const Clients: React.FC = () => {
   return (
     <section className="bg-black text-white overflow-hidden">
       <Devider variant="default" />
-      <div className="container mx-auto px-4 my-14 sm:my-12">
+      <div className="w-full flex justify-center px-4 my-14 sm:my-12">
         <h3 className={styles.title}>Our Clients</h3>
       </div>
 
@@ -47,7 +47,7 @@ const Clients: React.FC = () => {
               <img
                 src={logo.src}
                 alt={`Client ${index}`}
-                className="max-h-38 min-w-37.5 w-auto object-contain mx-3.75 block"
+                className="max-h-[152px] min-w-[150px] w-auto object-contain mx-[15px] block"
               />
             </div>
           ))}
