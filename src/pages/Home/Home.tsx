@@ -14,8 +14,13 @@ import styles from "./home.module.css";
 import useApiHook from "../../hooks/useApiHook";
 import Clients from "../../components/OurClients/Clients";
 
-export default function Home() {
-  const [cmsInfo, setCmsInfo] = useState({});
+export default function Home({
+  initialCmsInfo = {},
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  initialCmsInfo?: any;
+}) {
+  const [cmsInfo, setCmsInfo] = useState(initialCmsInfo);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -23,6 +28,8 @@ export default function Home() {
   const { api } = useApiHook();
 
   useEffect(() => {
+    if (Object.keys(initialCmsInfo).length > 0) return;
+
     const getCms = async () => {
       const response = await api({
         endPoint: "/admin/cms/",
@@ -33,7 +40,7 @@ export default function Home() {
       }
     };
     getCms();
-  }, []);
+  }, [initialCmsInfo]);
 
   return (
     <section className={styles.section}>
