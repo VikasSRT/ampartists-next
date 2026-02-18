@@ -27,7 +27,7 @@ async function getCmsData() {
       return {};
     }
     const data = await res.json();
-    return data?.data || {};
+    return data?.data || data || {};
   } catch (error) {
     console.error("Error fetching CMS data:", error);
     return {};

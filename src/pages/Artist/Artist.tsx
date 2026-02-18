@@ -33,9 +33,14 @@ const initialGenre: ICheckbox[] = genresOption.map((genre) => ({
   checked: false,
 }));
 
-export default function Artist() {
+export default function Artist({
+  initialArtists = [],
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  initialArtists?: any[];
+}) {
   const [searchArtist, setSearchArtist] = useState<string>("");
-  const [artist, setArtist] = useState([]);
+  const [artist, setArtist] = useState(initialArtists || []);
   const [filteredArtist, setfFilteredAArtist] = useState<
     {
       id: number;
@@ -59,10 +64,10 @@ export default function Artist() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const querySearchedArtist = searchParams.get("search");
-  const queryLocation = searchParams.get("location");
-  const queryMinRate = searchParams.get("average_booking_rate_min");
-  const queryMaxRate = searchParams.get("average_booking_rate_max");
+  const querySearchedArtist = searchParams?.get("search");
+  const queryLocation = searchParams?.get("location");
+  const queryMinRate = searchParams?.get("average_booking_rate_min");
+  const queryMaxRate = searchParams?.get("average_booking_rate_max");
   const [locations, setLocations] = useState<string[]>([]);
   const [isLocationsLoaded, setIsLocationsLoaded] = useState(false);
 
@@ -98,7 +103,7 @@ export default function Artist() {
       genre: initialGenre,
     });
 
-    const newParams = new URLSearchParams(searchParams.toString());
+    const newParams = new URLSearchParams(searchParams?.toString());
     newParams.delete("search");
     newParams.delete("location");
     newParams.delete("average_booking_rate_min");
@@ -209,6 +214,38 @@ export default function Artist() {
   };
 
   useEffect(() => {
+    if (initialArtists && initialArtists.length > 0) {
+      setArtist(initialArtists);
+    }
+  }, [initialArtists]);
+
+  useEffect(() => {
+    // Only fetch initially if we don't have SSR data
+    // Also, if search params exist, we might want to refetch to filter on the client side
+    // or rely on server side filtering if we implemented it there (but we haven't yet for params).
+    // For now, let's keep it simple: if initialArtists is empty, fetch.
+    if (!initialArtists || initialArtists.length === 0) {
+      const timeId = setTimeout(() => {
+        getArtist();
+      }, 1000);
+      return () => clearTimeout(timeId);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Skip the first render if we have initial data and no filters changed yet
+    // This logic might need refinement depending on exact behavior desired
+    const isInitialRender =
+      initialArtists.length > 0 &&
+      !searchArtist &&
+      !genreTag &&
+      !formData.budget.from &&
+      !formData.budget.to &&
+      formData.genre === initialGenre &&
+      formData.location.length === 0;
+
+    if (isInitialRender) return;
+
     const timeId = setTimeout(() => {
       getArtist();
     }, 1000);

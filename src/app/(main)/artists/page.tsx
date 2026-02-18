@@ -1,5 +1,4 @@
 import Artist from "@/pages/Artist/Artist";
-import { Suspense } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,10 +6,37 @@ export const metadata: Metadata = {
   description: "Browse and book from our curated list of artists.",
 };
 
-export default function ArtistsPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Artist />
-    </Suspense>
-  );
+async function getArtists() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}customer/artists-list/`,
+      {
+        cache: "no-store",
+      },
+    );
+    if (!res.ok) {
+      console.error(
+        "Failed to fetch artists data:",
+        res.status,
+        res.statusText,
+      );
+      return [];
+    }
+    const data = await res.json();
+
+    if (Array.isArray(data)) {
+      return data;
+    }
+
+    return data?.data || [];
+  } catch (error) {
+    console.error("Error fetching artists data:", error);
+    return [];
+  }
+}
+
+export default async function ArtistsPage() {
+  const artists = await getArtists();
+
+  return <Artist initialArtists={artists} />;
 }

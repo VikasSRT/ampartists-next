@@ -20,17 +20,30 @@ import useApiHook from "../../hooks/useApiHook";
 import styles from "./singleArtist.module.css";
 import useLanguage from "../../hooks/useLanguage";
 
-export default function SingleArtistPage() {
+export default function SingleArtistPage({
+  initialArtistInfo,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  initialArtistInfo?: any;
+}) {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   const { id } = useParams();
   const [showButton, setShowButton] = useState(false);
-  const [artistInfo, setArtistInfo] = useState<ArtistType | undefined>();
+  const [artistInfo, setArtistInfo] = useState<ArtistType | undefined>(
+    initialArtistInfo,
+  );
   const router = useRouter();
   const language = useLanguage();
 
   const { api } = useApiHook();
 
   useEffect(() => {
+    // Skip fetch if we have initial data (SSR)
+    if (initialArtistInfo) {
+      setArtistInfo(initialArtistInfo);
+      return;
+    }
+
     const getCms = async () => {
       const response = await api({
         endPoint: `/customer/artist/${id}/`,
@@ -41,8 +54,10 @@ export default function SingleArtistPage() {
         router.push("/");
       }
     };
-    getCms();
-  }, []);
+    if (id) {
+      getCms();
+    }
+  }, [id, initialArtistInfo]);
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
