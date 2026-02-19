@@ -10,7 +10,17 @@ import { MaskText } from "../../AnimatedText/MaskText";
 import { useTranslation } from "react-i18next";
 import useLanguage from "../../../hooks/useLanguage";
 
-type Props = {};
+import type { ArtistType } from "../../Gallery/Gallery";
+
+type Props = {
+  artistInfo?:
+    | (ArtistType & {
+        experiences?: string[];
+        experiences_ar?: string[];
+        experience_image?: string;
+      })
+    | null;
+};
 
 export default function Experience({ artistInfo }: Props) {
   const { t } = useTranslation();
@@ -19,7 +29,7 @@ export default function Experience({ artistInfo }: Props) {
 
   const { ref: svgRef, inView } = useInView({
     triggerOnce: true,
-    threshold: [0.5],
+    threshold: 0.2,
   });
 
   if (
@@ -27,7 +37,7 @@ export default function Experience({ artistInfo }: Props) {
     !artistInfo?.[language === "en" ? "experiences" : "experiences_ar"]
       ?.length ||
     !artistInfo?.[language === "en" ? "experiences" : "experiences_ar"]?.every(
-      (item) => item
+      (item: string) => item,
     )
   ) {
     return;
@@ -40,21 +50,26 @@ export default function Experience({ artistInfo }: Props) {
       </MaskText>
       <div className={styles.wrapper}>
         <ul className={styles.list}>
-          {EXPERIENCE.map((item, index) => {
-            const Icon = item.icon;
-            const value =
-              artistInfo?.[
-                language === "en" ? "experiences" : "experiences_ar"
-              ]?.[index];
-            return (
-              <MaskText stagger={index} key={item.id}>
-                <li className={styles.item}>
-                  <Icon className={styles.icon} style={{ color: item.color }} />
-                  <p className={styles.text}>{value}</p>
-                </li>
-              </MaskText>
-            );
-          })}
+          {EXPERIENCE.map(
+            (item: (typeof EXPERIENCE)[number], index: number) => {
+              const Icon = item.icon;
+              const value =
+                artistInfo?.[
+                  language === "en" ? "experiences" : "experiences_ar"
+                ]?.[index];
+              return (
+                <MaskText stagger={index} key={item.id}>
+                  <li className={styles.item}>
+                    <Icon
+                      className={styles.icon}
+                      style={{ color: item.color }}
+                    />
+                    <p className={styles.text}>{value}</p>
+                  </li>
+                </MaskText>
+              );
+            },
+          )}
         </ul>
         <div className={styles.imageContainer}>
           {artistInfo?.experience_image && (

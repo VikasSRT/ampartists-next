@@ -40,7 +40,7 @@ interface FeaturedArtistCardProps {
 export const FeaturedArtistCard = ({
   artist,
   index,
-  onBookNowClick
+  onBookNowClick,
 }: FeaturedArtistCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -54,7 +54,7 @@ export const FeaturedArtistCard = ({
   const getYouTubeEmbedUrl = (url: string) => {
     if (!url) return "";
     const videoId = url.match(
-      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
     )?.[1];
     return videoId ? `https://www.youtube.com/embed/${videoId}` : "";
   };
@@ -68,7 +68,7 @@ export const FeaturedArtistCard = ({
   const getSoundCloudEmbedUrl = (url: string) => {
     if (!url) return "";
     return `https://w.soundcloud.com/player/?url=${encodeURIComponent(
-      url
+      url,
     )}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`;
   };
 
@@ -222,7 +222,7 @@ export const FeaturedArtistCard = ({
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
                   <img
-                    src={youtubeIcon}
+                    src={youtubeIcon.src}
                     alt="YouTube"
                     className="w-full h-full object-contain"
                   />
@@ -237,7 +237,7 @@ export const FeaturedArtistCard = ({
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
                   <img
-                    src={spotifyIcon}
+                    src={spotifyIcon.src}
                     alt="Spotify"
                     className="w-full h-full object-contain"
                   />
@@ -252,7 +252,7 @@ export const FeaturedArtistCard = ({
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
                   <img
-                    src={soundcloudIcon}
+                    src={soundcloudIcon.src}
                     alt="SoundCloud"
                     className="w-full h-full object-contain"
                   />

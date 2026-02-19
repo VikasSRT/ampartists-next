@@ -1,12 +1,11 @@
-@import "tailwindcss";
-@config "../../tailwind.config.ts";
-
-/* Normalize and external styles */
 @import "modern-normalize/modern-normalize.css";
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 @import "swiper/css/scrollbar";
+
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 /* 🔽 Tailwind Design Tokens from Experiences (merged here directly) */
 @layer base {
@@ -157,30 +156,38 @@
 @font-face {
   font-family: "Gotham";
   font-weight: 500;
-  src: local("Gotham"), url(../assets/fonts/Gotham/Gotham-Medium-500.woff) format("opentype");
+  src:
+    local("Gotham"),
+    url(../assets/fonts/Gotham/Gotham-Medium-500.woff) format("opentype");
 }
 @font-face {
   font-family: "Gotham";
   font-weight: 700;
-  src: local("Gotham"), url(../assets/fonts/Gotham/Gotham-Bold-700.woff) format("opentype");
+  src:
+    local("Gotham"),
+    url(../assets/fonts/Gotham/Gotham-Bold-700.woff) format("opentype");
 }
 @font-face {
   font-family: "Gotham-Book";
   font-weight: 500;
-  src: local("Gotham-Book"), url(../assets/fonts/Gotham-Book/Gotham-Book-Font-500.otf) format("opentype");
+  src:
+    local("Gotham-Book"),
+    url(../assets/fonts/Gotham-Book/Gotham-Book-Font-500.otf) format("opentype");
 }
 @font-face {
   font-family: "Cairo";
   font-weight: 700;
-  src: local("Cairo"), url(../assets/fonts/Cairo/Cairo-Bold.ttf) format("opentype");
+  src:
+    local("Cairo"),
+    url(../assets/fonts/Cairo/Cairo-Bold.ttf) format("opentype");
 }
 
 /* Global Reset */
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
+} */
 
 .carioFont {
   font-family: Cairo;

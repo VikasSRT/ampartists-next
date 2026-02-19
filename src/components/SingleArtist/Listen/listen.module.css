@@ -3,7 +3,6 @@
   padding: var(--padding-inner-section) var(--padding-container-desktop);
 }
 .titleListen {
-
   font-size: 4.167em;
   line-height: 112.5%;
   text-transform: uppercase;
@@ -14,7 +13,6 @@
   unicode-bidi: bidi-override;
 }
 .spotiFyTitle {
-
   font-size: 1.875em;
   line-height: 133%;
   display: flex;

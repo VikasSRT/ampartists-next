@@ -12,7 +12,8 @@ import useLanguage from "../../hooks/useLanguage";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/navigation";
 
-function BookingGreen({ cmsInfo }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function BookingGreen({ cmsInfo }: { cmsInfo: any }) {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   const { t } = useTranslation();
   const router = useRouter();
@@ -36,7 +37,7 @@ function BookingGreen({ cmsInfo }) {
   const mainHeadingParts =
     cmsInfo?.bottomSection?.mainHeading?.[language]
       ?.split(",/")
-      .map((part) => part.trim()) || [];
+      .map((part: string) => part.trim()) || [];
   return (
     <>
       <div className={styles.container}>

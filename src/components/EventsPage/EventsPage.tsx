@@ -17,7 +17,7 @@ import spotifyIcon from "../../assets/images/spotify-icon.png";
 import soundcloudIcon from "../../assets/images/soundcloud-icon.png";
 import corporateHero from "../../assets/images/corporate-hero.jpg";
 import beachClubHero from "../../assets/images/BeachClubs.png";
-import weddingHero from "../../assets/images/Weddings.png";
+import weddingHero from "../../assets/images/weddings.png";
 
 import { Button } from "../ui/button";
 import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";

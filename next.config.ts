@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.s3.*.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "*.s3.amazonaws.com",
+      },
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -10,7 +22,7 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-  // @ts-expect-error - turbopack key is available in Next.js 16+ but types might be outdated
+  // turbopack key is available in Next.js 16+ but types might be outdated
   turbopack: {
     rules: {
       "*.svg": {

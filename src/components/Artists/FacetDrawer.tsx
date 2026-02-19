@@ -1,11 +1,10 @@
-
-import React from 'react';
-import { X, MapPin, DollarSign, Music } from 'lucide-react';
-import { Label } from '../ui/label';
-import { Slider } from '../ui/slider';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
-import { Checkbox } from '../ui/checkbox';
+import React from "react";
+import { X, MapPin, DollarSign, Music } from "lucide-react";
+import { Label } from "../ui/label";
+import { Slider } from "../ui/slider";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
 
 interface FacetDrawerProps {
   isOpen: boolean;
@@ -15,7 +14,13 @@ interface FacetDrawerProps {
     priceRange: number[];
     genres: string[];
   };
-  onFiltersChange: (filters: any) => void;
+  onFiltersChange: React.Dispatch<
+    React.SetStateAction<{
+      location: string;
+      priceRange: number[];
+      genres: string[];
+    }>
+  >;
 }
 
 const genres = [
@@ -38,13 +43,21 @@ const genres = [
   'EDM'
 ];
 
-export const FacetDrawer = ({ isOpen, onClose, filters, onFiltersChange }: FacetDrawerProps) => {
+export const FacetDrawer = ({
+  isOpen,
+  onClose,
+  filters,
+  onFiltersChange,
+}: FacetDrawerProps) => {
   if (!isOpen) return null;
 
-  const updateFilter = (key: string, value: any) => {
-    onFiltersChange(prev => ({
+  const updateFilter = (
+    key: keyof FacetDrawerProps["filters"],
+    value: string | number[] | string[],
+  ) => {
+    onFiltersChange((prev) => ({
       ...prev,
-      [key]: value
+      [key]: value,
     }));
   };
 
@@ -59,13 +72,15 @@ export const FacetDrawer = ({ isOpen, onClose, filters, onFiltersChange }: Facet
   return (
     <>
       {/* Backdrop */}
-      <div 
+      <div
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 md:z-40"
         onClick={onClose}
       />
-      
+
       {/* Drawer */}
-      <div className={`fixed right-0 top-0 h-full w-full md:w-96 bg-background border-l border-border z-50 md:z-40 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div
+        className={`fixed right-0 top-0 h-full w-full md:w-96 bg-background border-l border-border z-50 md:z-40 transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
@@ -86,7 +101,7 @@ export const FacetDrawer = ({ isOpen, onClose, filters, onFiltersChange }: Facet
               <Input
                 placeholder="Enter city name..."
                 value={filters.location}
-                onChange={(e) => updateFilter('location', e.target.value)}
+                onChange={(e) => updateFilter("location", e.target.value)}
               />
             </div>
 
@@ -99,7 +114,7 @@ export const FacetDrawer = ({ isOpen, onClose, filters, onFiltersChange }: Facet
               <div className="px-2">
                 <Slider
                   value={filters.priceRange}
-                  onValueChange={(value) => updateFilter('priceRange', value)}
+                  onValueChange={(value) => updateFilter("priceRange", value)}
                   max={50000}
                   min={0}
                   step={1000}
@@ -126,7 +141,7 @@ export const FacetDrawer = ({ isOpen, onClose, filters, onFiltersChange }: Facet
                       checked={filters.genres?.includes(genre)}
                       onCheckedChange={() => toggleGenre(genre)}
                     />
-                    <Label 
+                    <Label
                       htmlFor={genre}
                       className="text-sm font-normal cursor-pointer"
                     >
@@ -141,14 +156,16 @@ export const FacetDrawer = ({ isOpen, onClose, filters, onFiltersChange }: Facet
           {/* Footer */}
           <div className="p-6 border-t border-border">
             <div className="flex gap-3">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="flex-1"
-                onClick={() => onFiltersChange({
-                  location: '',
-                  priceRange: [0, 50000],
-                  genres: []
-                })}
+                onClick={() =>
+                  onFiltersChange({
+                    location: "",
+                    priceRange: [0, 50000],
+                    genres: [],
+                  })
+                }
               >
                 Clear All
               </Button>

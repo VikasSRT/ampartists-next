@@ -60,7 +60,9 @@ function Listen({ artistInfo }) {
               <div className={styles.spotiFyContainer}>
                 <MaskText stagger={1}>
                   <div className={styles.spotiFyTitle}>
-                    <Spotify className={styles.spotiFyTitle} />
+                    <Spotify
+                      className={styles.spotiFyTitle}
+                    />
                     <p> {t("listenSpotify")}</p>
                   </div>
                 </MaskText>

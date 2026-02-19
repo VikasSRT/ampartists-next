@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "../../utils/constants";
 import { MaskText } from "../AnimatedText/MaskText";
@@ -48,13 +49,13 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
   }, []);
 
   return (
-    <div className="max-w-[888px] mx-auto my-[48px] px-[16px] w-full">
+    <div className="max-w-[888px] mx-auto my-[48px] px-[16px] w-full flex flex-col items-center">
       <ul className={styles.list}>
         {artist.map((artist, index) => (
           <div
             key={artist?.id}
             onClick={() => router.push(`${ROUTES.artists}/${artist?.id}`)}
-            className="group bg-card overflow-hidden shadow-lg border border-border/50 flex flex-col w-full sm:max-w-[280px] h-[100%] mx-auto cursor-pointer"
+            className="group bg-card overflow-hidden shadow-lg border border-border/50 flex flex-col w-full max-w-[280px] h-[100%] cursor-pointer"
           >
             {/* Image Section - Square */}
             <div className="relative aspect-square overflow-hidden">
@@ -63,14 +64,16 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
                   imageLoaded ? "opacity-0" : "opacity-100"
                 }`}
               />
-              <img
+              <Image
                 src={artist.profile_image || "/placeholder.svg"}
                 alt={`${
                   language.includes("ar")
                     ? artist.stage_name_ar
                     : artist.stage_name
                 } - Artist`}
-                className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110 ${
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={`object-cover transition-transform duration-500 ease-out group-hover:scale-110 ${
                   imageLoaded ? "opacity-100" : "opacity-0"
                 }`}
                 onLoad={() => setImageLoaded(true)}
@@ -237,10 +240,11 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
                           onClick={(e) => e.stopPropagation()}
                           className="w-[28px] h-[28px] rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center"
                         >
-                          <img
+                          <Image
                             src={youtubeIcon}
                             alt="Youtube"
-                            className="w-[14px] h-[14px]"
+                            width={14}
+                            height={14}
                           />
                         </a>
                       )}
@@ -252,10 +256,11 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
                           onClick={(e) => e.stopPropagation()}
                           className="w-[28px] h-[28px] rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center"
                         >
-                          <img
+                          <Image
                             src={spotifyIcon}
                             alt="Spotify"
-                            className="w-[14px] h-[14px]"
+                            width={14}
+                            height={14}
                           />
                         </a>
                       )}
@@ -267,10 +272,11 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
                           onClick={(e) => e.stopPropagation()}
                           className="w-[28px] h-[28px] rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center"
                         >
-                          <img
+                          <Image
                             src={soundcloudIcon}
                             alt="SoundCloud"
-                            className="w-[14px] h-[14px]"
+                            width={14}
+                            height={14}
                           />
                         </a>
                       )}

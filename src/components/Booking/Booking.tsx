@@ -8,13 +8,14 @@ import { MaskText } from "../AnimatedText/MaskText";
 // Styles
 import styles from "./booking.module.css";
 
-function Booking({ cmsInfo }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Booking({ cmsInfo }: { cmsInfo: any }) {
   const language = useLanguage();
   console.log("cms", cmsInfo);
   const aboutUsSectionmainHeading =
     cmsInfo?.aboutUsSection?.mainHeading?.[language]
       ?.split(",/")
-      .map((part) => part) || [];
+      .map((part: string) => part) || [];
   return (
     <div className={styles.container} id={ANCHORS.howItWorks.id}>
       <div className={styles.wrapper}>
