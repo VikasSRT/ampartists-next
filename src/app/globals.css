@@ -1,11 +1,11 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
 @import "modern-normalize/modern-normalize.css";
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 @import "swiper/css/scrollbar";
-
-@import "tailwindcss";
-@config "../../tailwind.config.ts";
 
 /* 🔽 Tailwind Design Tokens from Experiences (merged here directly) */
 @layer base {
@@ -110,46 +110,16 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Segoe UI", system-ui, Gotham, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color-scheme: light dark;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
-
-/* 🔽 Ampartists original base styles (keep as-is) */
-:root {
-  font-family: "Segoe UI", system-ui, Gotham, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 500;
-
-  --White: #fff;
-  --Yellow: #c1ff16;
-  --Grey-BG: #1c1c1c;
-  --Grey-BG-2: #303030;
-  --Grey-BG-3: #2a2e36;
-  --Dark-Grey: #262626;
-  --Grey-Icon: #99a1af;
-  --Light-Grey: #6e7684;
-  --Orange: #f94819;
-  --Blue: #2f4acb;
-  --Purple: #8181d5;
-  --Black: #181718;
-  --Red: #ff0033;
-  --Light-devider: #d6fe46;
-  --Dark-devider: #bbe601;
-
-  --transition: all 0.3s ease-in-out;
-
-  --padding-container-desktop: 15.62em;
-  --padding-container-mobile: 0.833em;
-  --padding-inner-section: 5.21em;
-  --padding-inner-80: 4.166em;
-
-  color-scheme: light dark;
-  color: var(--White);
-  background: var(--Grey-BG);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Fonts */
@@ -159,6 +129,7 @@
   src:
     local("Gotham"),
     url(../assets/fonts/Gotham/Gotham-Medium-500.woff) format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Gotham";
@@ -166,6 +137,7 @@
   src:
     local("Gotham"),
     url(../assets/fonts/Gotham/Gotham-Bold-700.woff) format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Gotham-Book";
@@ -173,6 +145,7 @@
   src:
     local("Gotham-Book"),
     url(../assets/fonts/Gotham-Book/Gotham-Book-Font-500.otf) format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Cairo";
@@ -180,6 +153,7 @@
   src:
     local("Cairo"),
     url(../assets/fonts/Cairo/Cairo-Bold.ttf) format("opentype");
+  font-display: swap;
 }
 
 /* Global Reset */

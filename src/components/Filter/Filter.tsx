@@ -56,7 +56,10 @@ function Filter({
     }
   };
 
-  const handleRangeChange = (val: { from: number | string; to: number | string }) => {
+  const handleRangeChange = (val: {
+    from: number | string;
+    to: number | string;
+  }) => {
     handleFilterChange(String(val.from), "budget.from");
     handleFilterChange(String(val.to), "budget.to");
   };
@@ -74,14 +77,14 @@ function Filter({
   return (
     <div className={styles.container}>
       <div className={styles.wrapper} ref={wrapperRef} onClick={togglePopup}>
-        <FilterIcon className={styles.icon} />
+        <FilterIcon viewBox="0 0 18 20" className={styles.icon} />
       </div>
       {isOpen && (
         <div
           ref={popupRef}
           className={clsx(
             styles.dropDownContainer,
-            direction === "rtl" && styles.rtl
+            direction === "rtl" && styles.rtl,
           )}
         >
           <CustomSelectWithCheckbox

@@ -11,7 +11,6 @@ import styles from "./listen.module.css";
 import YouTubeEmbed from "./YouTubeEmbed";
 import { useTranslation } from "react-i18next";
 import DeviderAnimated from "../../Devider/DeviderAnimated";
-import Link from "next/link";
 
 const ListenSpotify = ({ playlistLink }) => {
   const url = (playlistLink || "").split("?")[0];
