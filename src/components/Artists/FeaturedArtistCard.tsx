@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { MapPin, Users, Music, Star, CheckCircle } from "lucide-react";
-import youtubeIcon from "../../assets/images/youtube-icon.png";
-import spotifyIcon from "../../assets/images/spotify-icon.png";
-import soundcloudIcon from "../../assets/images/soundcloud-icon.png";
 import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -222,7 +219,7 @@ export const FeaturedArtistCard = ({
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
                   <img
-                    src={youtubeIcon.src}
+                    src="/youtube-icon.png"
                     alt="YouTube"
                     className="w-full h-full object-contain"
                   />
@@ -237,7 +234,7 @@ export const FeaturedArtistCard = ({
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
                   <img
-                    src={spotifyIcon.src}
+                    src="/spotify-icon.png"
                     alt="Spotify"
                     className="w-full h-full object-contain"
                   />
@@ -252,7 +249,7 @@ export const FeaturedArtistCard = ({
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
                   <img
-                    src={soundcloudIcon.src}
+                    src="/soundcloud-icon.png"
                     alt="SoundCloud"
                     className="w-full h-full object-contain"
                   />

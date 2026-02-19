@@ -13,9 +13,6 @@ import {
   Search,
   CheckCircle,
 } from "lucide-react";
-import youtubeIcon from "../../assets/images/youtube-icon.png";
-import spotifyIcon from "../../assets/images/spotify-icon.png";
-import soundcloudIcon from "../../assets/images/soundcloud-icon.png";
 import corporateHero from "../../assets/images/corporate-hero.jpg";
 import beachClubHero from "../../assets/images/BeachClubs.png";
 import weddingHero from "../../assets/images/weddings.png";
@@ -890,7 +887,7 @@ const EventType = () => {
                           className="hover:scale-110 transition-transform duration-200"
                         >
                           <img
-                            src={youtubeIcon}
+                            src="/youtube-icon.png"
                             alt="YouTube"
                             className="w-6 h-6"
                           />
@@ -985,7 +982,7 @@ const EventType = () => {
                           className="hover:scale-110 transition-transform duration-200"
                         >
                           <img
-                            src={youtubeIcon}
+                            src="/youtube-icon.png"
                             alt="YouTube"
                             className="w-6 h-6"
                           />
@@ -1085,7 +1082,7 @@ const EventType = () => {
                           className="hover:scale-110 transition-transform duration-200"
                         >
                           <img
-                            src={youtubeIcon}
+                            src="/youtube-icon.png"
                             alt="YouTube"
                             className="w-6 h-6"
                           />
@@ -1187,7 +1184,7 @@ const EventType = () => {
                           className="hover:scale-110 transition-transform duration-200"
                         >
                           <img
-                            src={spotifyIcon}
+                            src="/spotify-icon.png"
                             alt="Spotify"
                             className="w-6 h-6"
                           />
@@ -1284,7 +1281,7 @@ const EventType = () => {
                           className="hover:scale-110 transition-transform duration-200"
                         >
                           <img
-                            src={spotifyIcon}
+                            src="/spotify-icon.png"
                             alt="Spotify"
                             className="w-6 h-6"
                           />
@@ -2119,7 +2116,7 @@ const EventType = () => {
                           className="hover:scale-110 transition-transform duration-200"
                         >
                           <img
-                            src={soundcloudIcon}
+                            src="/soundcloud-icon.png"
                             alt="SoundCloud"
                             className="w-6 h-6"
                           />
