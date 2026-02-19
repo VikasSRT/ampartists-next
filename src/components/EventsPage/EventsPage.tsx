@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import {
   Calendar,
@@ -427,10 +428,12 @@ const EventType = () => {
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src={config.heroImage}
             alt={`${config.title} background`}
+            fill
             className="w-full h-full object-cover"
+            priority
           />
           <div
             className={`absolute inset-0 bg-gradient-to-br ${config.heroGradient}`}
@@ -2833,7 +2836,7 @@ const EventType = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => navigate("/")}
+              onClick={() => router.push("/")}
               className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 w-full sm:w-auto"
             >
               <Search className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
@@ -2879,8 +2882,8 @@ const EventType = () => {
           <div className="flex justify-center">
             <Button
               size="lg"
-              variant="secondary"
-              className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
+              variant="outline"
+              className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto bg-background text-foreground border-background hover:bg-background/90"
               onClick={openConsultationDialog}
             >
               Schedule Consultation

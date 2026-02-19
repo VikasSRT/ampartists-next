@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -54,11 +55,14 @@ export const VenueSlider = () => {
                 className="pl-2 md:pl-4 basis-1/2 md:basis-1/3"
               >
                 <div className="flex items-center justify-center p-4 sm:p-6">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  />
+                  <div className="relative h-12 sm:h-16 md:h-20 w-full max-w-[150px]">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
                 </div>
               </CarouselItem>
             ))}
@@ -69,11 +73,14 @@ export const VenueSlider = () => {
                 className="pl-2 md:pl-4 basis-1/2 md:basis-1/3"
               >
                 <div className="flex items-center justify-center p-4 sm:p-6">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="h-12 sm:h-16 md:h-20 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  />
+                  <div className="relative h-12 sm:h-16 md:h-20 w-full max-w-[150px]">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
                 </div>
               </CarouselItem>
             ))}

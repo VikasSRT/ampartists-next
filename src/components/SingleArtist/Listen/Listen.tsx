@@ -59,9 +59,7 @@ function Listen({ artistInfo }) {
               <div className={styles.spotiFyContainer}>
                 <MaskText stagger={1}>
                   <div className={styles.spotiFyTitle}>
-                    <Spotify
-                      className={styles.spotiFyTitle}
-                    />
+                    <Spotify className={styles.spotiFyIcon} />
                     <p> {t("listenSpotify")}</p>
                   </div>
                 </MaskText>
@@ -74,7 +72,7 @@ function Listen({ artistInfo }) {
             <div className={styles.youtubeContainer}>
               <MaskText stagger={3}>
                 <div className={styles.spotiFyTitle}>
-                  <PlayYoutube className={styles.spotiFyTitle} />
+                  <PlayYoutube className={styles.spotiFyIcon} />
                   <p>{t("watchYoutube")}</p>
                 </div>
               </MaskText>
