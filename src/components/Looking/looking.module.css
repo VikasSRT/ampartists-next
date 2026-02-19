@@ -26,7 +26,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 24rem;
-  background-image: url(/src/assets/images/Star.png);
+  background-image: url(/Star.png);
   animation: spin 10s linear infinite;
 }
 

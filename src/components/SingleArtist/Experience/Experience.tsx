@@ -28,8 +28,8 @@ export default function Experience({ artistInfo }: Props) {
   console.log("🚀 ~ Experience ~ language:", language);
 
   const { ref: svgRef, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
+    triggerOnce: false,
+    threshold: 0.5,
   });
 
   if (
