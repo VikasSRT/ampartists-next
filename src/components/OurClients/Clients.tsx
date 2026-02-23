@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import Devider from "../Devider/Devider";
 import Partner1 from "../../assets/images/partners logos-01.png";
@@ -44,8 +45,8 @@ const Clients: React.FC = () => {
               key={index}
               className="mx-8 md:mx-12 flex items-center justify-center cursor-pointer transition-all duration-300 opacity-50 grayscale hover:opacity-100 hover:grayscale-0"
             >
-              <img
-                src={logo.src}
+              <Image
+                src={logo}
                 alt={`Client ${index}`}
                 className="max-h-[152px] min-w-[150px] w-auto object-contain !mx-[20px] block"
               />
