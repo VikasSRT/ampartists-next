@@ -24,13 +24,16 @@
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+  justify-content: center;
   pointer-events: none;
   color: var(--Grey-Icon);
   transition: var(--transition);
+  width: 24px;
+  height: 24px;
 }
 .icon svg {
-  width: 20px;
-  height: 19px;
+  width: 100%;
+  height: 100%;
 }
 
 .selectBox {
