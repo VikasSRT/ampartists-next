@@ -5,6 +5,7 @@ import { MaskText } from "../../AnimatedText/MaskText";
 import bg from "../../../assets/images/artists/bg.png";
 import DecorStar from "../../../assets/icons/starDecor.svg";
 import type { ArtistType } from "../../Gallery/Gallery";
+import Image from "next/image";
 
 // ArtistType from Gallery lacks some localized/optional fields used here.
 type ExtendedArtist = ArtistType & {
@@ -21,7 +22,6 @@ import styles from "./hero.module.css";
 import { toTitleCase } from "../../ArtistsList/ArtistsList";
 import useLanguage from "../../../hooks/useLanguage";
 import { useTranslation } from "react-i18next";
-import type React from "react";
 
 interface Props {
   togglePopup: () => void;
@@ -44,17 +44,34 @@ function Hero({ togglePopup, artistInfo }: Props) {
       " ",
     );
 
-  type CSSVars = React.CSSProperties & {
-    "--bg-desktop"?: string;
-    "--bg-mobile"?: string;
-  };
+  const desktopImage = artistInfo?.cover_image || bg;
+  const mobileImage =
+    artistInfo?.cover_image_mobile || artistInfo?.cover_image || bg;
+  const fullStageName = stageName?.join(" ");
 
-  const bgStyle: CSSVars = {
-    "--bg-desktop": `url(${artistInfo?.cover_image})`,
-    "--bg-mobile": `url(${artistInfo?.cover_image_mobile || artistInfo?.cover_image})`,
-  };
   return (
-    <div className={styles.container} style={bgStyle}>
+    <div className={styles.container}>
+      <Image
+        src={desktopImage}
+        alt={
+          fullStageName ? `${fullStageName} cover image` : "Artist cover image"
+        }
+        fill
+        priority
+        sizes="(min-width: 768px) 100vw, 0vw"
+        className={styles.desktopBg}
+      />
+      <Image
+        src={mobileImage}
+        alt={
+          fullStageName
+            ? `${fullStageName} mobile cover image`
+            : "Artist mobile cover image"
+        }
+        fill
+        sizes="100vw"
+        className={styles.mobileBg}
+      />
       <div className={styles.info}>
         <MaskText stagger={0.1}>
           <p className={styles.name}>
