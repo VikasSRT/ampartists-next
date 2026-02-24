@@ -1,6 +1,4 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Home from "@/pages/Home/Home";
+import Home from "@/views/Home/Home";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,11 +17,11 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
+export const revalidate = 600;
+
 async function getCmsData() {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}admin/cms/`, {
-      cache: "no-store",
-    });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}admin/cms/`);
     if (!res.ok) {
       console.error("Failed to fetch CMS data:", res.status, res.statusText);
       return {};

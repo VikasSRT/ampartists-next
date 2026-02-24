@@ -1,4 +1,4 @@
-import SingleArtistPage from "@/pages/singleArtist/SingleArtistPage";
+import SingleArtistPage from "@/views/singleArtist/SingleArtistPage";
 import { Metadata } from "next";
 
 type Props = {

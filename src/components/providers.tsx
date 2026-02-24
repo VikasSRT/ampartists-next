@@ -5,14 +5,16 @@ import { DirectionProvider } from "@/context/DirectionContext";
 import { Toaster } from "@/components/ui/toaster";
 import Analytics from "@/components/GoogleAnalytics/Analytics";
 import "@/utils/i18n";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Analytics />
+      <Suspense fallback={null}>
+        <Analytics />
+      </Suspense>
       <DirectionProvider>
         {children}
         <Toaster />
