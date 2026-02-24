@@ -12,9 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.ampartists.com",
-  ),
+  metadataBase: new URL("https://www.ampartists.com"),
   title: "AMP Artists Live",
   description: "MENA's Artist-Owned Booking Platform",
   icons: {
