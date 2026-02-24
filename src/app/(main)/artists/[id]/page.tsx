@@ -31,28 +31,79 @@ async function getArtist(id: string) {
   }
 }
 
+function buildArtistDescription(artist: any) {
+  const base =
+    artist?.biography ||
+    `Book ${artist?.stage_name} for your next event with AMP Artists Live.`;
+
+  if (base?.length <= 160) return base;
+
+  const truncated = base?.slice(0, 157);
+  const lastSpaceIndex = truncated?.lastIndexOf(" ");
+
+  return (
+    (lastSpaceIndex > 0 ? truncated?.slice(0, lastSpaceIndex) : truncated) +
+    "..."
+  );
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const artist = await getArtist(id);
+
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.ampartists.com";
+  const artistUrl = `${siteUrl}/artists/${id}`;
 
   if (!artist) {
     return {
       title: "Artist Not Found - AMP Artists Live",
       description: "The requested artist could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+      alternates: {
+        canonical: artistUrl,
+      },
     };
   }
 
+  const title = `${artist?.stage_name} - AMP Artists Live`;
+  const description = buildArtistDescription(artist);
+
+  const profileImageUrl = artist.profile_image
+    ? artist?.profile_image?.startsWith("http")
+      ? artist?.profile_image
+      : `${siteUrl}${artist?.profile_image}`
+    : undefined;
+
   return {
-    title: `${artist.stage_name} - AMP Artists Live`,
-    description:
-      artist.biography?.substring(0, 160) ||
-      `Book ${artist.stage_name} for your next event.`,
+    title,
+    description,
+    alternates: {
+      canonical: artistUrl,
+    },
     openGraph: {
-      title: `${artist.stage_name} - AMP Artists Live`,
-      description:
-        artist.biography?.substring(0, 160) ||
-        `Book ${artist.stage_name} for your next event.`,
-      images: artist.profile_image ? [artist.profile_image] : [],
+      title,
+      description,
+      url: artistUrl,
+      siteName: "AMP Artists Live",
+      type: "profile",
+      images: profileImageUrl
+        ? [
+            {
+              url: profileImageUrl,
+              alt: `${artist?.stage_name} profile photo`,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: profileImageUrl ? [profileImageUrl] : [],
     },
   };
 }
