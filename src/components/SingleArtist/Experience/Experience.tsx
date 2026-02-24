@@ -4,6 +4,7 @@ import Title from "../Title/Title";
 // Utils
 import { EXPERIENCE } from "../../../utils/constants";
 // Styles
+import Image from "next/image";
 import styles from "./experience.module.css";
 import clsx from "clsx";
 import { MaskText } from "../../AnimatedText/MaskText";
@@ -73,10 +74,15 @@ export default function Experience({ artistInfo }: Props) {
         </ul>
         <div className={styles.imageContainer}>
           {artistInfo?.experience_image && (
-            <img
+            <Image
               src={artistInfo.experience_image}
               alt="Image symbolizing the artist's growth, stage presence, and professional experience."
               className={styles.image}
+              width={0}
+              height={0}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ width: "100%", height: "auto" }}
+              loading="lazy"
             />
           )}
           <div className={styles.animations}>

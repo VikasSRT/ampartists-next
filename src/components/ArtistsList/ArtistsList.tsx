@@ -30,7 +30,6 @@ export const toTitleCase = (str: string) =>
 
 function ArtistsList({ artistList, artist, onGenreClick }: Props) {
   const [showAll, setShowAll] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const router = useRouter();
 
   const language = useLanguage();
@@ -59,11 +58,7 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
           >
             {/* Image Section - Square */}
             <div className="relative aspect-square overflow-hidden">
-              <div
-                className={`absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted ${
-                  imageLoaded ? "opacity-0" : "opacity-100"
-                }`}
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted" />
               <Image
                 src={artist.profile_image || "/placeholder.svg"}
                 alt={`${
@@ -73,10 +68,7 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
                 } - Artist`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className={`object-cover transition-transform duration-500 ease-out group-hover:scale-110 ${
-                  imageLoaded ? "opacity-100" : "opacity-0"
-                }`}
-                onLoad={() => setImageLoaded(true)}
+                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />

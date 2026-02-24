@@ -3,6 +3,7 @@ import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import clsx from "clsx";
+import Image from "next/image";
 // Components
 import { NavBtnNext, NavBtnPrev } from "./NavButton";
 // Styles
@@ -45,11 +46,17 @@ function Slider({ galleryList, testimonials, tours, onClick }: Props) {
         {galleryList &&
           galleryList.map((item, index) => (
             <SwiperSlide className={styles.sliderItem} key={index}>
-              <img
-                src={item}
-                alt={`gallery image-${index}`}
-                className={styles.image}
-              />
+              <div className="relative w-full h-[400px]">
+                <Image
+                  src={item}
+                  alt={`gallery image-${index}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 428px"
+                  className={styles.image}
+                  style={{ objectFit: "cover" }}
+                  loading="lazy"
+                />
+              </div>
             </SwiperSlide>
           ))}
         {testimonials &&
@@ -66,11 +73,17 @@ function Slider({ galleryList, testimonials, tours, onClick }: Props) {
           tours.map((tour, index) => (
             <SwiperSlide className={styles.sliderItem} key={index}>
               <li className={styles.item}>
-                <img
-                  src={tour.photo}
-                  alt={tour.place}
-                  className={styles.image}
-                />
+                <div className="relative w-full h-48 mb-4">
+                  <Image
+                    src={tour.photo}
+                    alt={tour.place}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 428px"
+                    className={styles.image}
+                    style={{ objectFit: "cover" }}
+                    loading="lazy"
+                  />
+                </div>
                 <div className={styles.info}>
                   <p className={styles.place}>{tour.place}</p>
                   <p className={styles.date}>{tour.date}</p>

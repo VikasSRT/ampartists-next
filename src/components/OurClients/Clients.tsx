@@ -27,7 +27,7 @@ const Clients: React.FC = () => {
   return (
     <section className="bg-black text-white overflow-hidden">
       <Devider variant="default" />
-      <div className="w-full flex justify-center px-4 !my-18 sm:!my-14">
+      <div className="w-full flex justify-center px-4 mt-12 mb-18 sm:mt-14 sm:mb-14">
         <h3 className={styles.title}>Our Clients</h3>
       </div>
 
