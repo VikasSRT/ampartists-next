@@ -61,13 +61,13 @@ function Hero({ cmsInfo }) {
         />
       </div>
       <div className={styles.wrapper}>
-        <div className={styles.title}>
+        <h1 className={styles.title}>
           <MaskText stagger={0.1}>
             {/* The <span>Artist-Owned</span> Booking Platform */}
             {mainHeadingParts[0]} <span>{mainHeadingParts[1]}</span>{" "}
             {mainHeadingParts[2]}
           </MaskText>
-        </div>
+        </h1>
 
         <div className={styles.subTitle}>
           <MaskText stagger={1}>

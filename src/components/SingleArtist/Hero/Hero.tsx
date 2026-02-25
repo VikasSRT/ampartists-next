@@ -74,12 +74,12 @@ function Hero({ togglePopup, artistInfo }: Props) {
       />
       <div className={styles.info}>
         <MaskText stagger={0.1}>
-          <p className={styles.name}>
+          <h1 className={styles.name}>
             {/* Sarah <br></br>Johnson */}
             {stageName?.[0]}
             <br></br>
             {stageName?.slice(1).join(" ")}
-          </p>
+          </h1>
         </MaskText>
         <MaskText stagger={0.2}>
           <p className={styles.direction}>
