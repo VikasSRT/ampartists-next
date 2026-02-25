@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "../../utils/constants";
-import { MaskText } from "../AnimatedText/MaskText";
+// import { MaskText } from "../AnimatedText/MaskText";
 import Button from "../Button/Button";
 import styles from "./artistslist.module.css";
 import useLanguage from "../../hooks/useLanguage";
@@ -38,7 +38,7 @@ function ArtistsList({ artistList, artist, onGenreClick }: Props) {
     setShowAll(!showAll);
   };
 
-  const visibleArtists = showAll ? artistList : artistList.slice(0, 6);
+  // const visibleArtists = showAll ? artistList : artistList.slice(0, 6);
 
   useEffect(() => {
     const isDesktop = window.innerWidth >= 1024;
