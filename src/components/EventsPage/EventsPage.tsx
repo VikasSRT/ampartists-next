@@ -854,10 +854,12 @@ const EventType = () => {
                 {/* Jam Rebel */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/7b68913d-2446-4c0e-9d1c-db8ba157c059.png"
                       alt="Jam Rebel"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -886,9 +888,11 @@ const EventType = () => {
                           rel="noopener noreferrer"
                           className="hover:scale-110 transition-transform duration-200"
                         >
-                          <img
+                          <Image
                             src="/youtube-icon.png"
                             alt="YouTube"
+                            width={24}
+                            height={24}
                             className="w-6 h-6"
                           />
                         </a>
@@ -949,10 +953,12 @@ const EventType = () => {
                 {/* The Bossa Project */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/7ec8225a-ea09-4565-babe-2448f52523ae.png"
                       alt="The Bossa Project"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -981,9 +987,11 @@ const EventType = () => {
                           rel="noopener noreferrer"
                           className="hover:scale-110 transition-transform duration-200"
                         >
-                          <img
+                          <Image
                             src="/youtube-icon.png"
                             alt="YouTube"
+                            width={24}
+                            height={24}
                             className="w-6 h-6"
                           />
                         </a>
@@ -1049,10 +1057,12 @@ const EventType = () => {
                 {/* Omire Music Duo */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/b185ef90-97cd-4fa3-a488-005975aa6ce7.png"
                       alt="Omire Music Duo"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1081,9 +1091,11 @@ const EventType = () => {
                           rel="noopener noreferrer"
                           className="hover:scale-110 transition-transform duration-200"
                         >
-                          <img
+                          <Image
                             src="/youtube-icon.png"
                             alt="YouTube"
+                            width={24}
+                            height={24}
                             className="w-6 h-6"
                           />
                         </a>
@@ -1151,10 +1163,12 @@ const EventType = () => {
                 {/* Larry Arrarat */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/6d7a97ac-9e87-49e0-a45d-594d283fdb02.png"
                       alt="Larry Arrarat"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1183,9 +1197,11 @@ const EventType = () => {
                           rel="noopener noreferrer"
                           className="hover:scale-110 transition-transform duration-200"
                         >
-                          <img
+                          <Image
                             src="/spotify-icon.png"
                             alt="Spotify"
+                            width={24}
+                            height={24}
                             className="w-6 h-6"
                           />
                         </a>
@@ -1248,10 +1264,12 @@ const EventType = () => {
                 {/* 4TheMusic */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/0f0fb197-76b9-4d29-b3b5-f51f22e76784.png"
                       alt="4TheMusic"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1280,9 +1298,11 @@ const EventType = () => {
                           rel="noopener noreferrer"
                           className="hover:scale-110 transition-transform duration-200"
                         >
-                          <img
+                          <Image
                             src="/spotify-icon.png"
                             alt="Spotify"
+                            width={24}
+                            height={24}
                             className="w-6 h-6"
                           />
                         </a>
@@ -1350,10 +1370,12 @@ const EventType = () => {
                 {/* El Saxo De Luis */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/62283778-5aca-413c-8f91-a27ae5522532.png"
                       alt="El Saxo De Luis"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1433,10 +1455,12 @@ const EventType = () => {
                 {/* Dirty Backseat */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/f5e47f1b-1aa9-4bde-815e-049e154f2ae4.png"
                       alt="Dirty Backseat"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1517,10 +1541,12 @@ const EventType = () => {
                 {/* Glass Onion */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/75bfa4a5-80dc-4b74-844c-ce72034bbb2b.png"
                       alt="Glass Onion"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1599,10 +1625,12 @@ const EventType = () => {
                 {/* Chinua Hawk */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/5898cae6-d11c-459a-9b0b-3cd8f4aa674f.png"
                       alt="Chinua Hawk"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1676,10 +1704,12 @@ const EventType = () => {
                 {/* ABRI & The Soul Chefs */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/5983e2e0-bb7b-4e0e-8c66-f8fff584cb61.png"
                       alt="ABRI & The Soul Chefs"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1758,10 +1788,12 @@ const EventType = () => {
                 {/* Daneel Sayegh */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/38538464-2e3a-478e-b377-bd890d55b16e.png"
                       alt="Daneel Sayegh"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1836,10 +1868,12 @@ const EventType = () => {
                 {/* Hawazin */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/f865d3fe-a874-4916-bd45-70dd4dd22422.png"
                       alt="Hawazin"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -1913,10 +1947,12 @@ const EventType = () => {
                 {/* Kdun Albaz */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/7408d686-bf69-4c04-9aa5-fddc18d4dd2e.png"
                       alt="Kdun Albaz"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2002,10 +2038,12 @@ const EventType = () => {
                 {/* DJ Sara G */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/a7917120-4639-4100-9a62-689827945be8.png"
                       alt="DJ Sara G"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2083,10 +2121,12 @@ const EventType = () => {
                 {/* DJ Akmaral */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/2a2644e1-c6f6-4408-9e12-df5794b628ef.png"
                       alt="DJ Akmaral"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2115,9 +2155,11 @@ const EventType = () => {
                           rel="noopener noreferrer"
                           className="hover:scale-110 transition-transform duration-200"
                         >
-                          <img
+                          <Image
                             src="/soundcloud-icon.png"
                             alt="SoundCloud"
+                            width={24}
+                            height={24}
                             className="w-6 h-6"
                           />
                         </a>
@@ -2183,10 +2225,12 @@ const EventType = () => {
                 {/* DJ Liutik */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/21db8238-4717-4f79-9a8c-6485c9738d9c.png"
                       alt="DJ Liutik"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2263,10 +2307,12 @@ const EventType = () => {
                 {/* Chiati */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/85e5a1a1-1e45-43c7-8f05-dafbe6eb8018.png"
                       alt="Chiati"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2344,10 +2390,12 @@ const EventType = () => {
                 {/* Tata */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/adedeff8-56b9-4ca7-a794-a0ac7634c5c6.png"
                       alt="Tata"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2423,10 +2471,12 @@ const EventType = () => {
                 {/* Jess */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/39ab573b-e16a-40a5-b957-263ce9e82c9c.png"
                       alt="Jess"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2503,10 +2553,12 @@ const EventType = () => {
                 {/* DJ Kataleena */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/4aa4c138-0091-4efc-a381-2292e011a903.png"
                       alt="DJ Kataleena"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2580,10 +2632,12 @@ const EventType = () => {
                 {/* Lobito Brigante */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/7711f044-9054-4e1c-8293-1b8b16706d72.png"
                       alt="Lobito Brigante"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2663,10 +2717,12 @@ const EventType = () => {
                 {/* DJ Pinkfish */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/ed349b1f-f6d1-433d-8337-fc5c787dd4fa.png"
                       alt="DJ Pinkfish"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">
@@ -2740,10 +2796,12 @@ const EventType = () => {
                 {/* Jenn Getz & Alfie */}
                 <Card className="group overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src="/lovable-uploads/e26bd58e-b88c-490c-a3d1-d22584cadce5.png"
                       alt="Jenn Getz & Alfie"
+                      fill
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 flex gap-2">

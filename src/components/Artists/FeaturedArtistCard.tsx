@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { MapPin, Users, Music, Star, CheckCircle } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import { MapPin, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -112,17 +113,19 @@ export const FeaturedArtistCard = ({
           renderEmbed()
         ) : (
           <>
-            <img
+            <Image
               src={
                 isBossaProject
                   ? "/lovable-uploads/7ec8225a-ea09-4565-babe-2448f52523ae.png"
                   : "/lovable-uploads/7b68913d-2446-4c0e-9d1c-db8ba157c059.png"
               }
               alt={isBossaProject ? "The Bossa Project" : artist.stageName}
+              fill
               className={`w-full h-full object-cover transition-all duration-700 ${
                 isHovered ? "scale-110" : "scale-100"
               } ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-              onLoad={() => setImageLoaded(true)}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              onLoadingComplete={() => setImageLoaded(true)}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           </>
@@ -218,9 +221,11 @@ export const FeaturedArtistCard = ({
                   title="YouTube"
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
-                  <img
+                  <Image
                     src="/youtube-icon.png"
                     alt="YouTube"
+                    width={24}
+                    height={24}
                     className="w-full h-full object-contain"
                   />
                 </a>
@@ -233,9 +238,11 @@ export const FeaturedArtistCard = ({
                   title="Spotify"
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
-                  <img
+                  <Image
                     src="/spotify-icon.png"
                     alt="Spotify"
+                    width={24}
+                    height={24}
                     className="w-full h-full object-contain"
                   />
                 </a>
@@ -248,9 +255,11 @@ export const FeaturedArtistCard = ({
                   title="SoundCloud"
                   className="w-6 h-6 rounded hover:opacity-80 transition-opacity"
                 >
-                  <img
+                  <Image
                     src="/soundcloud-icon.png"
                     alt="SoundCloud"
+                    width={24}
+                    height={24}
                     className="w-full h-full object-contain"
                   />
                 </a>
