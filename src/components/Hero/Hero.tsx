@@ -1,10 +1,12 @@
+import Image from "next/image";
 import ButtonWithIcon from "../Button/ButtonWithIcon";
 import { MaskText } from "../AnimatedText/MaskText";
 // Utils
-import { ANCHORS } from "../../utils/constants";
+// import { ANCHORS } from "../../utils/constants";
 // Styles
 import styles from "./hero.module.css";
 import useLanguage from "../../hooks/useLanguage";
+import bgHero from "../../assets/images/bg-hero.jpg";
 import { useTranslation } from "react-i18next";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -47,6 +49,17 @@ function Hero({ cmsInfo }) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.heroBgImage}>
+        <Image
+          src={bgHero}
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className={styles.heroBgImageImg}
+        />
+      </div>
       <div className={styles.wrapper}>
         <div className={styles.title}>
           <MaskText stagger={0.1}>

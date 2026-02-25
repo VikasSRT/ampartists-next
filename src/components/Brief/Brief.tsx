@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 import { MaskText } from "../AnimatedText/MaskText";
 import Button from "../Button/Button";
 // Utils
-import { LOCATIONS, ROUTES } from "../../utils/constants";
+import { ROUTES } from "../../utils/constants";
 // Types
 import type { ICheckbox } from "../../types/types";
 // Images
@@ -64,7 +64,7 @@ export default function Brief({ cmsInfo }) {
 
   const fetchLocations = async () => {
     try {
-      const { success, error, data } = await api({
+      const { success, data } = await api({
         method: "GET",
         endPoint: `/admin/artists-locations/`,
         needLoader: true,

@@ -47,7 +47,10 @@ const Clients: React.FC = () => {
             >
               <Image
                 src={logo}
-                alt={`Client ${index}`}
+                alt={`Client ${index + 1}`}
+                width={300}
+                height={300}
+                sizes="(max-width: 768px) 150px, 200px"
                 className="max-h-[152px] min-w-[150px] w-auto object-contain !mx-[20px] block"
               />
             </div>

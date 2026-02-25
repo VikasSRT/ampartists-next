@@ -1,9 +1,9 @@
 // Images
 import DecorStar from "../../assets/icons/decor-star.svg";
-import { useDirection } from "../../context/DirectionContext";
+// import { useDirection } from "../../context/DirectionContext";
 import useLanguage from "../../hooks/useLanguage";
 // Utils
-import { ANCHORS, BOOKING } from "../../utils/constants";
+import { ANCHORS } from "../../utils/constants";
 import { MaskText } from "../AnimatedText/MaskText";
 // Styles
 import styles from "./booking.module.css";

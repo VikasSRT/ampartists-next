@@ -17,6 +17,7 @@ import { ANCHORS, ROUTES } from "../../utils/constants";
 import styles from "./talents.module.css";
 import useApiHook from "../../hooks/useApiHook";
 import useLanguage from "../../hooks/useLanguage";
+import Image from "next/image";
 
 interface Artist {
   id: number | string;
@@ -65,7 +66,7 @@ function Talents({ cmsInfo }) {
 
   const fetchArtists = async () => {
     try {
-      const { success, error, data } = await api({
+      const { success, data } = await api({
         method: "GET",
         endPoint: `customer/artists-list/`,
         needLoader: true,
@@ -137,10 +138,13 @@ function Talents({ cmsInfo }) {
             <li className={styles.item} key={artist.id}>
               <MaskText stagger={index} className={styles.itemMask}>
                 <div className={styles.imageWrapper}>
-                  <img
+                  <Image
                     src={artist.profile_image}
                     alt={artist.stage_name}
                     className={styles.photo}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 320px"
+                    loading="lazy"
                   />
                   <p
                     className={clsx(

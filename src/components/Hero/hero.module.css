@@ -4,12 +4,19 @@
   align-items: center;
   flex-direction: column;
   padding: var(--padding-inner-section) 0;
-  background-image: url(../../assets/images/bg-hero.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+}
+.heroBgImage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.heroBgImageImg {
+  object-fit: cover;
+  object-position: center;
 }
 .wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
